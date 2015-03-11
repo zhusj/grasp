@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "grasp")
+set(grasp_MAINTAINER "pracsys <pracsys@todo.todo>")
+set(grasp_DEPRECATED "")
+set(grasp_VERSION "0.0.0")
+set(grasp_BUILD_DEPENDS "roscpp" "rospy" "std_msgs")
+set(grasp_RUN_DEPENDS "roscpp" "rospy" "std_msgs")
+set(grasp_BUILDTOOL_DEPENDS "catkin")

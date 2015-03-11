@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "baxter_sim_hardware")
+set(baxter_sim_hardware_MAINTAINER "Rethink Robotics Inc. <rsdk.support@rethinkrobotics.com>")
+set(baxter_sim_hardware_DEPRECATED "")
+set(baxter_sim_hardware_VERSION "0.8.1")
+set(baxter_sim_hardware_BUILD_DEPENDS "roscpp" "baxter_core_msgs" "cv_bridge" "image_transport" "baxter_sim_kinematics")
+set(baxter_sim_hardware_RUN_DEPENDS "std_msgs" "roscpp" "baxter_core_msgs" "cv_bridge" "image_transport" "baxter_sim_kinematics" "controller_manager")
+set(baxter_sim_hardware_BUILDTOOL_DEPENDS "catkin")

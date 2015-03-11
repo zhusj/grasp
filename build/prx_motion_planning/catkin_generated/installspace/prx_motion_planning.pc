@@ -1,0 +1,8 @@
+prefix=/Users/Shaojun/catkin_ws/install
+
+Name: prx_motion_planning
+Description: Description of prx_motion_planning
+Version: 0.0.1
+Cflags: 
+Libs: -L/Users/Shaojun/catkin_ws/install/lib 
+Requires: 

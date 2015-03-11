@@ -1,0 +1,10 @@
+\subsubsection usage Usage
+\verbatim
+<node name="prx_motion_planning3" pkg="prx_motion_planning3" type="prx_motion_planning3">
+  <param name="first_rotating_axis" type="int" value="2" />
+  <param name="first_rotating_axis_signal" type="double" value="1.0" />
+  <param name="second_rotating_axis" type="int" value="2" />
+  <param name="second_rotating_axis_signal" type="double" value="1.0" />
+</node>
+\endverbatim
+

@@ -1,0 +1,8 @@
+prefix=/Users/Shaojun/catkin_ws/devel
+
+Name: gazebo_ros
+Description: Description of gazebo_ros
+Version: 2.3.2
+Cflags: -I/Users/Shaojun/catkin_ws/devel/include -I/usr/local/include
+Libs: -L/Users/Shaojun/catkin_ws/devel/lib -lgazebo_ros_api_plugin -lgazebo_ros_paths_plugin -l:/usr/local/lib/libtinyxml.dylib
+Requires: roslib roscpp geometry_msgs std_srvs tf rosgraph_msgs dynamic_reconfigure message_generation std_msgs gazebo_msgs gazebo_plugins

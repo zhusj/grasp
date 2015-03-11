@@ -1,0 +1,6 @@
+set(prx_motion_planning3_SETUP_PY_VERSION "0.0.1")
+set(prx_motion_planning3_SETUP_PY_SCRIPTS "")
+set(prx_motion_planning3_SETUP_PY_PACKAGES "prx_motion_planning3")
+set(prx_motion_planning3_SETUP_PY_PACKAGE_DIRS "src/prx_motion_planning3")
+set(prx_motion_planning3_SETUP_PY_MODULES "")
+set(prx_motion_planning3_SETUP_PY_MODULE_DIRS "")

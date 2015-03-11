@@ -1,0 +1,8 @@
+prefix=/Users/Shaojun/catkin_ws/devel
+
+Name: grasp
+Description: Description of grasp
+Version: 0.0.0
+Cflags: 
+Libs: -L/Users/Shaojun/catkin_ws/devel/lib 
+Requires: 

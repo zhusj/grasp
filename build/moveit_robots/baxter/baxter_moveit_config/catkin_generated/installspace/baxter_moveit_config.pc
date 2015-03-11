@@ -1,0 +1,8 @@
+prefix=/Users/Shaojun/catkin_ws/install
+
+Name: baxter_moveit_config
+Description: Description of baxter_moveit_config
+Version: 1.0.0
+Cflags: 
+Libs: -L/Users/Shaojun/catkin_ws/install/lib 
+Requires: 

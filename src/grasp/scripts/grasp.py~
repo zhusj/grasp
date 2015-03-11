@@ -1,0 +1,23 @@
+import sys 
+import numpy
+# from geometry_msgs.msg import (
+#     PoseStamped,
+#     Pose,
+#     Point,
+#     Quaternion,
+# )
+object_name = 'cone'
+# pose = Pose()
+for i in range(1, 10):
+  pose.position.x = i
+  pose.position.y = i
+  pose.position.z = i
+  pose.orientation.x = i
+  pose.orientation.y = i
+  pose.orientation.z = i
+  pose.orientation.w = i
+  grasp[object_name][i] = pose
+# This is the standard boilerplate that calls the main() function.
+if __name__ == '__main__':
+  main()
+

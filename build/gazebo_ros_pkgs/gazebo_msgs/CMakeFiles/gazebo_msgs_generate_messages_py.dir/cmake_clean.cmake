@@ -1,0 +1,39 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/gazebo_msgs_generate_messages_py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/msg/_ODEPhysics.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/msg/_ContactState.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/msg/_LinkState.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/msg/_ModelStates.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/msg/_WorldState.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/msg/_ModelState.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/msg/_ContactsState.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/msg/_ODEJointProperties.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/msg/_LinkStates.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/srv/_SetLinkState.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/srv/_SetModelConfiguration.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/srv/_SetJointProperties.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/srv/_ApplyJointEffort.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/srv/_SetLinkProperties.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/srv/_BodyRequest.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/srv/_DeleteModel.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/srv/_GetLinkProperties.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/srv/_GetJointProperties.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/srv/_JointRequest.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/srv/_SetJointTrajectory.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/srv/_GetLinkState.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/srv/_GetPhysicsProperties.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/srv/_SetModelState.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/srv/_SpawnModel.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/srv/_GetModelProperties.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/srv/_SetPhysicsProperties.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/srv/_GetModelState.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/srv/_ApplyBodyWrench.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/srv/_GetWorldProperties.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/msg/__init__.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_msgs/srv/__init__.py"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang)
+  include(CMakeFiles/gazebo_msgs_generate_messages_py.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

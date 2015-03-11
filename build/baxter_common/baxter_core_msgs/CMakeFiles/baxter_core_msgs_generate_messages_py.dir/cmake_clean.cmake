@@ -1,0 +1,40 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/baxter_core_msgs_generate_messages_py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_DigitalIOState.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_HeadPanCommand.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_SEAJointState.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_ITBState.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_NavigatorState.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_EndEffectorProperties.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_CollisionDetectionState.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_CameraControl.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_EndpointState.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_DigitalIOStates.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_AnalogIOState.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_ITBStates.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_AnalogIOStates.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_CameraSettings.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_HeadState.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_NavigatorStates.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_DigitalOutputCommand.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_EndEffectorCommand.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_EndpointStates.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_CollisionAvoidanceState.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_AnalogOutputCommand.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_AssemblyState.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_EndEffectorState.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_JointCommand.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_RobustControllerStatus.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/_AssemblyStates.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/srv/_OpenCamera.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/srv/_CloseCamera.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/srv/_ListCameras.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/srv/_SolvePositionIK.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/msg/__init__.py"
+  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/baxter_core_msgs/srv/__init__.py"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang)
+  include(CMakeFiles/baxter_core_msgs_generate_messages_py.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

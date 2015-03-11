@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "prx_motion_planning3")
+set(prx_motion_planning3_MAINTAINER "Alberto Ferreira De Souza <alberto@lcad.inf.ufes.br>")
+set(prx_motion_planning3_DEPRECATED "")
+set(prx_motion_planning3_VERSION "0.0.1")
+set(prx_motion_planning3_BUILD_DEPENDS "roscpp" "rospy" "std_msgs" "dynamic_reconfigure")
+set(prx_motion_planning3_RUN_DEPENDS "roscpp" "rospy" "std_msgs" "dynamic_reconfigure")
+set(prx_motion_planning3_BUILDTOOL_DEPENDS "catkin")
