@@ -15,11 +15,12 @@ from geometry_msgs.msg import (
 
 
 
-def grasp():
+def grasp_main():
 
   object_name = 'expo_dry_erase_board_eraser'
   print object_name
   grasp = {}
+  index = 0
   # grasp = [[0 for x in range(5)] for x in range(5)] 
   # print grasp
 
@@ -39,15 +40,28 @@ def grasp():
         gamma = - 15 + k * angle_resolution 
         temp_pose = tf.transformations.quaternion_from_euler(alpha, beta, gamma)
 
-    pose.orientation.x = temp_pose[0]
-    pose.orientation.y = temp_pose[1]
-    pose.orientation.z = temp_pose[2]
-    pose.orientation.w = temp_pose[3]
-    grasp[object_name].append(pose)
+        pose.orientation.x = temp_pose[0]
+        pose.orientation.y = temp_pose[1]
+        pose.orientation.z = temp_pose[2]
+        pose.orientation.w = temp_pose[3]
+        grasp[object_name][index] = pose
+        index += 1
     print grasp
+
+  print index
+
+  grasp_publisher = rospy.Publisher('/grasp', , queue_size =10)
+
+  # Main loop
+  rate = rospy.Rate(5) # hz
+  while not rospy.is_shutdown():
+    grasp_publisher.publish(grasp)
+    rate.sleep()
+
+  return
 
 
 # This is the standard boilerplate that calls the main() function.
 if __name__ == '__main__':
-  grasp()
+  grasp_main()
 
