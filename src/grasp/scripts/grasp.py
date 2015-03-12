@@ -3,6 +3,10 @@
 import sys 
 import rospy
 import tf
+import numpy
+import json
+import os
+
 
 import std_msgs.msg
 from geometry_msgs.msg import (
@@ -13,12 +17,19 @@ from geometry_msgs.msg import (
 )
 
 
-
+# rel_path = os.path.dirname(__file__)
+# abs_path = os.path.abspath(rel_path)
+# root_path_rev = os.path.relpath('/' + abs_path[::-1], '/' + rel_path[::-1])
+# root_path = root_path_rev[::-1]
+# print abs_path
+# print rel_path
+# print root_path
+# filename = os.path.join(dir, '/relative/path/to/file/you/want')
 
 def grasp_main():
 
   object_name = 'expo_dry_erase_board_eraser'
-  print object_name
+  # print object_name
   grasp = {}
   index = 0
   # grasp = [[0 for x in range(5)] for x in range(5)] 
@@ -46,19 +57,24 @@ def grasp_main():
         pose.orientation.w = temp_pose[3]
         grasp[object_name][index] = pose
         index += 1
-    print grasp
+    # print grasp
 
-  print index
-
-  grasp_publisher = rospy.Publisher('/grasp', , queue_size =10)
-
+  # print index
+  save_path = './data/' + object_name
+  # print save_path
+  numpy.save(save_path, grasp)
+  # grasp_publisher = rospy.Publisher('/grasp', , queue_size =10)
+  # data_path = root_path + '/data/' + object_name + '.npy'
+  # print data_path
+  loaded_grasp = numpy.load(save_path + '.npy' )
+  print loaded_grasp
   # Main loop
-  rate = rospy.Rate(5) # hz
-  while not rospy.is_shutdown():
-    grasp_publisher.publish(grasp)
-    rate.sleep()
+  # rate = rospy.Rate(5) # hz
+  # while not rospy.is_shutdown():
+  #   grasp_publisher.publish(grasp)
+  #   rate.sleep()
 
-  return
+  # return
 
 
 # This is the standard boilerplate that calls the main() function.
