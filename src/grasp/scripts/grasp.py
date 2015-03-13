@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 
 import sys 
-import rospy
 import tf
 import numpy
-import json
 import os
 
 
@@ -38,7 +36,7 @@ def grasp_main():
   # if object_name == 'oreo_mega_stuf':
   grasp[object_name] = {}
   angle_resolution = 5 #degree
-  for i in range(1, 180/angle_resolution):
+  for i in range(0, 180/angle_resolution):
     grasp[object_name] = {}
     pose = Pose()
     pose.position.x = 0
