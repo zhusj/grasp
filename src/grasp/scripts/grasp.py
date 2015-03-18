@@ -4,6 +4,7 @@ import sys
 import tf
 import numpy
 import os
+import json
 
 
 import std_msgs.msg
@@ -35,17 +36,16 @@ def grasp_main():
 
   # if object_name == 'oreo_mega_stuf':
   grasp[object_name] = {}
-  angle_resolution = 5 #degree
-  for i in range(0, 180/angle_resolution):
-    grasp[object_name] = {}
+  angle_resolution = 10 #degree
+  for i in range(0, 180/angle_resolution + 1):
     pose = Pose()
     pose.position.x = 0
     pose.position.y = 0
     pose.position.z = 0
     beta = - 90 + i * angle_resolution
-    for j in range(1, 30/angle_resolution):
+    for j in range(0, 30/angle_resolution + 1):
       alpha = - 15 + j * angle_resolution
-      for k in range(1, 30/angle_resolution):
+      for k in range(0, 30/angle_resolution + 1):
         gamma = - 15 + k * angle_resolution 
         temp_pose = tf.transformations.quaternion_from_euler(alpha, beta, gamma)
 
@@ -55,17 +55,33 @@ def grasp_main():
         pose.orientation.w = temp_pose[3]
         grasp[object_name][index] = pose
         index += 1
+        # print index
+        # print grasp
+
     # print grasp
 
-  # print index
+#   save_path = './data/' + object_name + '.json'
+#   with open(save_path, 'w') as f:
+#     json.dump(grasp, f)
+
+# # elsewhere...
+
+#   with open(save_path) as f:
+#     loaded_grasp = json.load(f)
+
+  print index
   save_path = './data/' + object_name
   # print save_path
-  numpy.save(save_path, grasp)
+  numpy.savez(save_path, grasp = [grasp])
   # grasp_publisher = rospy.Publisher('/grasp', , queue_size =10)
   # data_path = root_path + '/data/' + object_name + '.npy'
   # print data_path
-  loaded_grasp = numpy.load(save_path + '.npy' )
-  print loaded_grasp
+  loaded_file = numpy.load(save_path + '.npz' )
+  # print index
+  # print len(loaded_file[object_name])
+  loaded_grasp =  loaded_file['grasp'][0]
+  print loaded_grasp[object_name][0]
+
   # Main loop
   # rate = rospy.Rate(5) # hz
   # while not rospy.is_shutdown():
