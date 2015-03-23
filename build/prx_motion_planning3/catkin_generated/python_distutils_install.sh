@@ -12,17 +12,17 @@ if [ -n "$DESTDIR" ] ; then
     DESTDIR_ARG="--root=$DESTDIR"
 fi
 
-cd "/Users/Shaojun/catkin_ws/src/prx_motion_planning3"
+cd "/home/pracsys/grasp/src/prx_motion_planning3"
 
 # Note that PYTHONPATH is pulled from the environment to support installing
 # into one location when some dependencies were installed in another
 # location, #123.
 /usr/bin/env \
-    PYTHONPATH="/Users/Shaojun/catkin_ws/install/lib/python2.7/site-packages:/Users/Shaojun/catkin_ws/build/lib/python2.7/site-packages:$PYTHONPATH" \
-    CATKIN_BINARY_DIR="/Users/Shaojun/catkin_ws/build" \
+    PYTHONPATH="/home/pracsys/grasp/install/lib/python2.7/dist-packages:/home/pracsys/grasp/build/lib/python2.7/dist-packages:$PYTHONPATH" \
+    CATKIN_BINARY_DIR="/home/pracsys/grasp/build" \
     "/usr/bin/python" \
-    "/Users/Shaojun/catkin_ws/src/prx_motion_planning3/setup.py" \
-    build --build-base "/Users/Shaojun/catkin_ws/build/prx_motion_planning3" \
+    "/home/pracsys/grasp/src/prx_motion_planning3/setup.py" \
+    build --build-base "/home/pracsys/grasp/build/prx_motion_planning3" \
     install \
     $DESTDIR_ARG \
-     --prefix="/Users/Shaojun/catkin_ws/install" --install-scripts="/Users/Shaojun/catkin_ws/install/bin"
+    --install-layout=deb --prefix="/home/pracsys/grasp/install" --install-scripts="/home/pracsys/grasp/install/bin"

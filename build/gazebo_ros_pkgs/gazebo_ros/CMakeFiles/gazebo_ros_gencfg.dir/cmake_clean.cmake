@@ -1,13 +1,13 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/gazebo_ros_gencfg"
-  "/Users/Shaojun/catkin_ws/devel/include/gazebo_ros/PhysicsConfig.h"
-  "/Users/Shaojun/catkin_ws/devel/share/gazebo_ros/docs/PhysicsConfig.dox"
-  "/Users/Shaojun/catkin_ws/devel/share/gazebo_ros/docs/PhysicsConfig-usage.dox"
-  "/Users/Shaojun/catkin_ws/devel/lib/python2.7/site-packages/gazebo_ros/cfg/PhysicsConfig.py"
-  "/Users/Shaojun/catkin_ws/devel/share/gazebo_ros/docs/PhysicsConfig.wikidoc"
+  "/home/pracsys/grasp/devel/include/gazebo_ros/PhysicsConfig.h"
+  "/home/pracsys/grasp/devel/share/gazebo_ros/docs/PhysicsConfig.dox"
+  "/home/pracsys/grasp/devel/share/gazebo_ros/docs/PhysicsConfig-usage.dox"
+  "/home/pracsys/grasp/devel/lib/python2.7/dist-packages/gazebo_ros/cfg/PhysicsConfig.py"
+  "/home/pracsys/grasp/devel/share/gazebo_ros/docs/PhysicsConfig.wikidoc"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang)
-  include(CMakeFiles/gazebo_ros_gencfg.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang)
+  INCLUDE(CMakeFiles/gazebo_ros_gencfg.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

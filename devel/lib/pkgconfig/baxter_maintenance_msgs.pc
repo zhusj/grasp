@@ -1,8 +1,8 @@
-prefix=/Users/Shaojun/catkin_ws/devel
+prefix=/home/pracsys/grasp/devel
 
 Name: baxter_maintenance_msgs
 Description: Description of baxter_maintenance_msgs
 Version: 1.0.1
-Cflags: -I/Users/Shaojun/catkin_ws/devel/include
-Libs: -L/Users/Shaojun/catkin_ws/devel/lib 
+Cflags: -I/home/pracsys/grasp/devel/include
+Libs: -L/home/pracsys/grasp/devel/lib 
 Requires: message_runtime std_msgs

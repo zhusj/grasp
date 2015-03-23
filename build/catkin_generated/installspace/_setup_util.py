@@ -55,7 +55,7 @@ ENV_VAR_SUBFOLDERS = {
     'LD_LIBRARY_PATH' if not IS_DARWIN else 'DYLD_LIBRARY_PATH': 'lib',
     'PATH': 'bin',
     'PKG_CONFIG_PATH': 'lib/pkgconfig',
-    'PYTHONPATH': 'lib/python2.7/site-packages',
+    'PYTHONPATH': 'lib/python2.7/dist-packages',
 }
 
 
@@ -252,7 +252,7 @@ if __name__ == '__main__':
             sys.exit(1)
 
         # environment at generation time
-        CMAKE_PREFIX_PATH = '/Users/Shaojun/ros_catkin_ws/install_isolated'.split(';')
+        CMAKE_PREFIX_PATH = '/opt/ros/hydro'.split(';')
         # prepend current workspace if not already part of CPP
         base_path = os.path.dirname(__file__)
         if base_path not in CMAKE_PREFIX_PATH:

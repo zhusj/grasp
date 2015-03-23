@@ -1,8 +1,8 @@
-prefix=/Users/Shaojun/catkin_ws/devel
+prefix=/home/pracsys/grasp/devel
 
 Name: baxter_moveit_config
 Description: Description of baxter_moveit_config
 Version: 1.0.0
 Cflags: 
-Libs: -L/Users/Shaojun/catkin_ws/devel/lib 
+Libs: -L/home/pracsys/grasp/devel/lib 
 Requires: 

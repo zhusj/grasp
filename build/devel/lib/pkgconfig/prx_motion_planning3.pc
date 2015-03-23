@@ -1,8 +1,0 @@
-prefix=/Users/Shaojun/catkin_ws/build/devel
-
-Name: prx_motion_planning3
-Description: Description of prx_motion_planning3
-Version: 0.0.1
-Cflags: -I/Users/Shaojun/catkin_ws/build/devel/include
-Libs: -L/Users/Shaojun/catkin_ws/build/devel/lib 
-Requires: dynamic_reconfigure

@@ -1,8 +1,8 @@
-prefix=/Users/Shaojun/catkin_ws/install
+prefix=/home/pracsys/grasp/install
 
 Name: prx_motion_planning3
 Description: Description of prx_motion_planning3
 Version: 0.0.1
-Cflags: -I/Users/Shaojun/catkin_ws/install/include
-Libs: -L/Users/Shaojun/catkin_ws/install/lib 
+Cflags: -I/home/pracsys/grasp/install/include
+Libs: -L/home/pracsys/grasp/install/lib 
 Requires: dynamic_reconfigure

@@ -1,8 +1,8 @@
-prefix=/Users/Shaojun/catkin_ws/install
+prefix=/home/pracsys/grasp/install
 
 Name: baxter_core_msgs
 Description: Description of baxter_core_msgs
 Version: 1.0.1
-Cflags: -I/Users/Shaojun/catkin_ws/install/include
-Libs: -L/Users/Shaojun/catkin_ws/install/lib 
+Cflags: -I/home/pracsys/grasp/install/include
+Libs: -L/home/pracsys/grasp/install/lib 
 Requires: message_runtime geometry_msgs sensor_msgs std_msgs

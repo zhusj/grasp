@@ -1,90 +1,103 @@
-Determining if the Q_WS_X11 exist failed with the following output:
-Change Dir: /Users/Shaojun/catkin_ws/build/CMakeFiles/CMakeTmp
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec4190280108/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec4190280108.dir/build.make CMakeFiles/cmTryCompileExec4190280108.dir/build
-/usr/local/Cellar/cmake/3.0.1/bin/cmake -E cmake_progress_report /Users/Shaojun/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec4190280108.dir/CheckSymbolExists.cxx.o
-/usr/bin/c++    -I/usr/local/Cellar/qt/4.8.6/include -F/usr/local/Cellar/qt/4.8.6/lib    -o CMakeFiles/cmTryCompileExec4190280108.dir/CheckSymbolExists.cxx.o -c /Users/Shaojun/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
-/Users/Shaojun/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: use of undeclared identifier 'Q_WS_X11'
-  return ((int*)(&Q_WS_X11))[argc];
-                  ^
-1 error generated.
-make[1]: *** [CMakeFiles/cmTryCompileExec4190280108.dir/CheckSymbolExists.cxx.o] Error 1
-make: *** [cmTryCompileExec4190280108/fast] Error 2
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o  -o cmTryCompileExec -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec] Error 1
+make[1]: Leaving directory `/home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
 
-File /Users/Shaojun/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
-/* */
-#include <QtCore/qglobal.h>
-
-int main(int argc, char** argv)
-{
-  (void)argv;
-#ifndef Q_WS_X11
-  return ((int*)(&Q_WS_X11))[argc];
-#else
-  (void)argc;
-  return 0;
-#endif
-}
 
 Determining if the Q_WS_WIN exist failed with the following output:
-Change Dir: /Users/Shaojun/catkin_ws/build/CMakeFiles/CMakeTmp
+Change Dir: /home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec1794869860/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1794869860.dir/build.make CMakeFiles/cmTryCompileExec1794869860.dir/build
-/usr/local/Cellar/cmake/3.0.1/bin/cmake -E cmake_progress_report /Users/Shaojun/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec1794869860.dir/CheckSymbolExists.cxx.o
-/usr/bin/c++    -I/usr/local/Cellar/qt/4.8.6/include -F/usr/local/Cellar/qt/4.8.6/lib    -o CMakeFiles/cmTryCompileExec1794869860.dir/CheckSymbolExists.cxx.o -c /Users/Shaojun/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
-/Users/Shaojun/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: use of undeclared identifier 'Q_WS_WIN'
-  return ((int*)(&Q_WS_WIN))[argc];
-                  ^
-1 error generated.
-make[1]: *** [CMakeFiles/cmTryCompileExec1794869860.dir/CheckSymbolExists.cxx.o] Error 1
-make: *** [cmTryCompileExec1794869860/fast] Error 2
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.cxx.o -c /home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main()’:
+/home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:25: error: ‘Q_WS_WIN’ was not declared in this scope
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory `/home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
 
-File /Users/Shaojun/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+File /home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
 /* */
 #include <QtCore/qglobal.h>
 
-int main(int argc, char** argv)
+void cmakeRequireSymbol(int dummy,...){(void)dummy;}
+int main()
 {
-  (void)argv;
 #ifndef Q_WS_WIN
-  return ((int*)(&Q_WS_WIN))[argc];
-#else
-  (void)argc;
-  return 0;
+  cmakeRequireSymbol(0,&Q_WS_WIN);
 #endif
+  return 0;
 }
 
 Determining if the Q_WS_QWS exist failed with the following output:
-Change Dir: /Users/Shaojun/catkin_ws/build/CMakeFiles/CMakeTmp
+Change Dir: /home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2958404630/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2958404630.dir/build.make CMakeFiles/cmTryCompileExec2958404630.dir/build
-/usr/local/Cellar/cmake/3.0.1/bin/cmake -E cmake_progress_report /Users/Shaojun/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec2958404630.dir/CheckSymbolExists.cxx.o
-/usr/bin/c++    -I/usr/local/Cellar/qt/4.8.6/include -F/usr/local/Cellar/qt/4.8.6/lib    -o CMakeFiles/cmTryCompileExec2958404630.dir/CheckSymbolExists.cxx.o -c /Users/Shaojun/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
-/Users/Shaojun/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: use of undeclared identifier 'Q_WS_QWS'
-  return ((int*)(&Q_WS_QWS))[argc];
-                  ^
-1 error generated.
-make[1]: *** [CMakeFiles/cmTryCompileExec2958404630.dir/CheckSymbolExists.cxx.o] Error 1
-make: *** [cmTryCompileExec2958404630/fast] Error 2
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.cxx.o -c /home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main()’:
+/home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:25: error: ‘Q_WS_QWS’ was not declared in this scope
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory `/home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
 
-File /Users/Shaojun/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+File /home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
 /* */
 #include <QtCore/qglobal.h>
 
-int main(int argc, char** argv)
+void cmakeRequireSymbol(int dummy,...){(void)dummy;}
+int main()
 {
-  (void)argv;
 #ifndef Q_WS_QWS
-  return ((int*)(&Q_WS_QWS))[argc];
-#else
-  (void)argc;
-  return 0;
+  cmakeRequireSymbol(0,&Q_WS_QWS);
 #endif
+  return 0;
+}
+
+Determining if the Q_WS_MAC exist failed with the following output:
+Change Dir: /home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.cxx.o -c /home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main()’:
+/home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:25: error: ‘Q_WS_MAC’ was not declared in this scope
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory `/home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+File /home/pracsys/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+void cmakeRequireSymbol(int dummy,...){(void)dummy;}
+int main()
+{
+#ifndef Q_WS_MAC
+  cmakeRequireSymbol(0,&Q_WS_MAC);
+#endif
+  return 0;
 }
 

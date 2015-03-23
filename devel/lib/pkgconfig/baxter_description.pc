@@ -1,8 +1,8 @@
-prefix=/Users/Shaojun/catkin_ws/devel
+prefix=/home/pracsys/grasp/devel
 
 Name: baxter_description
 Description: Description of baxter_description
 Version: 1.0.1
 Cflags: 
-Libs: -L/Users/Shaojun/catkin_ws/devel/lib 
+Libs: -L/home/pracsys/grasp/devel/lib 
 Requires: 

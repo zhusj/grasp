@@ -4,5 +4,5 @@ DEVELSPACE = 'TRUE' == 'TRUE'
 INSTALLSPACE = 'FALSE' == 'TRUE'
 
 PROJECT_NAME = 'baxter_core_msgs'
-PKG_MSG_INCLUDE_DIRS = '/Users/Shaojun/catkin_ws/src/baxter_common/baxter_core_msgs/msg'
+PKG_MSG_INCLUDE_DIRS = '/home/pracsys/grasp/src/baxter_common/baxter_core_msgs/msg'
 ARG_DEPENDENCIES = 'geometry_msgs;sensor_msgs;std_msgs'

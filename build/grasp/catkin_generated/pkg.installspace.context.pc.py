@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "grasp"
-PROJECT_SPACE_DIR = "/Users/Shaojun/catkin_ws/install"
+PROJECT_SPACE_DIR = "/home/pracsys/grasp/install"
 PROJECT_VERSION = "0.0.0"

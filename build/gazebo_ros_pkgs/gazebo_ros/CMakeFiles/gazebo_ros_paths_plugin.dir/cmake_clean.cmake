@@ -1,10 +1,10 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/gazebo_ros_paths_plugin.dir/src/gazebo_ros_paths_plugin.cpp.o"
-  "/Users/Shaojun/catkin_ws/devel/lib/libgazebo_ros_paths_plugin.pdb"
-  "/Users/Shaojun/catkin_ws/devel/lib/libgazebo_ros_paths_plugin.dylib"
+  "/home/pracsys/grasp/devel/lib/libgazebo_ros_paths_plugin.pdb"
+  "/home/pracsys/grasp/devel/lib/libgazebo_ros_paths_plugin.so"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
-  include(CMakeFiles/gazebo_ros_paths_plugin.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/gazebo_ros_paths_plugin.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

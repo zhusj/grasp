@@ -1,8 +1,8 @@
-prefix=/Users/Shaojun/catkin_ws/install
+prefix=/home/pracsys/grasp/install
 
 Name: clam_moveit_config
 Description: Description of clam_moveit_config
 Version: 0.1.0
 Cflags: 
-Libs: -L/Users/Shaojun/catkin_ws/install/lib 
+Libs: -L/home/pracsys/grasp/install/lib 
 Requires: 

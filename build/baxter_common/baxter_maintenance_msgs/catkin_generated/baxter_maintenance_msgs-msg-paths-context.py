@@ -4,5 +4,5 @@ DEVELSPACE = 'TRUE' == 'TRUE'
 INSTALLSPACE = 'FALSE' == 'TRUE'
 
 PROJECT_NAME = 'baxter_maintenance_msgs'
-PKG_MSG_INCLUDE_DIRS = '/Users/Shaojun/catkin_ws/src/baxter_common/baxter_maintenance_msgs/msg'
+PKG_MSG_INCLUDE_DIRS = '/home/pracsys/grasp/src/baxter_common/baxter_maintenance_msgs/msg'
 ARG_DEPENDENCIES = 'std_msgs'

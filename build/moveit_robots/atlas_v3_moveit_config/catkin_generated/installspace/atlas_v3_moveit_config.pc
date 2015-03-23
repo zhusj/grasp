@@ -1,8 +1,8 @@
-prefix=/Users/Shaojun/catkin_ws/install
+prefix=/home/pracsys/grasp/install
 
 Name: atlas_v3_moveit_config
 Description: Description of atlas_v3_moveit_config
 Version: 0.2.0
 Cflags: 
-Libs: -L/Users/Shaojun/catkin_ws/install/lib 
+Libs: -L/home/pracsys/grasp/install/lib 
 Requires: 

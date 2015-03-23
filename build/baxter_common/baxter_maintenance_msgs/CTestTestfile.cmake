@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /Users/Shaojun/catkin_ws/src/baxter_common/baxter_maintenance_msgs
-# Build directory: /Users/Shaojun/catkin_ws/build/baxter_common/baxter_maintenance_msgs
+# Source directory: /home/pracsys/grasp/src/baxter_common/baxter_maintenance_msgs
+# Build directory: /home/pracsys/grasp/build/baxter_common/baxter_maintenance_msgs
 # 
-# This file includes the relevant testing commands required for 
+# This file includes the relevent testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
