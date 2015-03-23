@@ -47,12 +47,15 @@ def grasp_main():
 
   angle_resolution = 10 #degree
   k = math.pi / 180.0 # degree to radian
-  for i in range(0, 20/angle_resolution + 1):
+  alpha_range = 0
+  beta_range = 0
+  gamma_range = 0
+  for i in range(0, beta_range/angle_resolution + 1):
     pose = Pose()
     pose.position.x = 0
     pose.position.y = 0
     pose.position.z = 0
-    beta = k * (- 10 + i * angle_resolution)
+    beta = k * (- beta_range/2 + i * angle_resolution)
     temp_pose = tf.transformations.quaternion_from_euler(0, beta, 0)
 
     pose.orientation.x = temp_pose[0]
@@ -63,8 +66,8 @@ def grasp_main():
     index += 1
 
 
-  for j in range(0, 20/angle_resolution + 1):
-    alpha = k * (- 10 + j * angle_resolution)
+  for j in range(1, alpha_range/angle_resolution + 1):
+    alpha = k * (- alpha_range/2 + j * angle_resolution)
     temp_pose = tf.transformations.quaternion_from_euler(alpha, 0, 0)
 
     pose.orientation.x = temp_pose[0]
@@ -77,8 +80,8 @@ def grasp_main():
 
 
 
-  for k in range(0, 20/angle_resolution + 1):
-    gamma = k * (- 10 + k * angle_resolution) 
+  for k in range(1, gamma_range/angle_resolution + 1):
+    gamma = k * (- gamma_range/2 + k * angle_resolution) 
     temp_pose = tf.transformations.quaternion_from_euler(0, 0, gamma)
 
     pose.orientation.x = temp_pose[0]
