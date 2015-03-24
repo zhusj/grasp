@@ -25,7 +25,9 @@ from geometry_msgs.msg import (
 # filename = os.path.join(dir, '/relative/path/to/file/you/want')
 
 def grasp_main():
+  global d_to_r
 
+  d_to_r = math.pi / 180.0 # degree to radian
   object_name = 'expo_dry_erase_board_eraser'
   # print object_name
   grasp = {}
@@ -45,32 +47,37 @@ def grasp_main():
   # pose.orientation.w = 0.9962 #temp_pose[3]
   # grasp[object_name][index] = pose
 
-  angle_resolution = 5 #degree
-  d_to_r = math.pi / 180.0 # degree to radian
-  alpha_range = 30
-  beta_range = 0
+  angle_resolution = 10 #degree
+    
+
+  alpha_range = 0
+  beta_range = 30
   gamma_range = 0
-  for i in range(0, beta_range/angle_resolution + 1):
+  origin, xaxis, yaxis, zaxis = [0, 0, 0], [1, 0, 0], [0, 1, 0], [0, 0, 1]
+  for i in range(1, beta_range/angle_resolution + 1):
+    # print 'beta'
     pose = Pose()
     pose.position.x = 0
     pose.position.y = 0
     pose.position.z = 0
     beta = d_to_r * (- beta_range/2 + i * angle_resolution)
-    temp_pose = tf.transformations.quaternion_from_euler(0, beta, 0)
+    temp_pose = tf.transformations.quaternion_about_axis( beta, yaxis)
 
     pose.orientation.x = temp_pose[0]
     pose.orientation.y = temp_pose[1]
     pose.orientation.z = temp_pose[2]
     pose.orientation.w = temp_pose[3]
     grasp[object_name][index] = pose
+    print_angles(pose)
     index += 1
 
 
   for j in range(1, alpha_range/angle_resolution + 1):
+    # print 'alpha'
     pose = Pose()
     alpha = d_to_r * (- alpha_range/2 + j * angle_resolution)
-    print 'alpha = ', alpha
-    temp_pose = tf.transformations.quaternion_from_euler(alpha, 0, 0)
+    # print 'alpha = ', alpha
+    temp_pose = tf.transformations.quaternion_about_axis(alpha, xaxis)
 
     pose.orientation.x = temp_pose[0]
     pose.orientation.y = temp_pose[1]
@@ -82,8 +89,10 @@ def grasp_main():
 
 
   for k in range(1, gamma_range/angle_resolution + 1):
+    # print 'gamma'
+    pose = Pose()
     gamma = d_to_r * (- gamma_range/2 + k * angle_resolution) 
-    temp_pose = tf.transformations.quaternion_from_euler(0, 0, gamma)
+    temp_pose = tf.transformations.quaternion_about_axis(gamma, zaxis)
 
     pose.orientation.x = temp_pose[0]
     pose.orientation.y = temp_pose[1]
@@ -119,11 +128,11 @@ def grasp_main():
 
   loaded_grasp =  loaded_file['grasp'][0]
   num_of_grasp = len(loaded_grasp[object_name])
-  print loaded_grasp
-  for i in range(0,num_of_grasp):
-    print i
-    print loaded_grasp[object_name][i]
-    print_angles(loaded_grasp[object_name][i])
+  # print loaded_grasp
+  # for i in range(0,num_of_grasp):
+  #   print i
+  #   print loaded_grasp[object_name][i]
+  #   print_angles(loaded_grasp[object_name][i])
 
   # Main loop
   # rate = rospy.Rate(5) # hz
@@ -136,8 +145,10 @@ def quaternion_from_orientation(orientation):
   return [orientation.x, orientation.y, orientation.z, orientation.w]
 
 def print_angles(pose):
-  angles = tf.transformations.euler_from_quaternion(quaternion_from_orientation(pose.orientation))
-  print angles[0] * 180.0 / math.pi, ", ", angles[1] * 180.0 / math.pi, ", ", angles[2] * 180.0 / math.pi
+  Rq = tf.transformations.quaternion_matrix(quaternion_from_orientation(pose.orientation))
+  angles, direc, Point = tf.transformations.rotation_from_matrix(Rq)
+  print angles/d_to_r
+  # print angles[0] * 180.0 / math.pi, ", ", angles[1] * 180.0 / math.pi, ", ", angles[2] * 180.0 / math.pi
     
   return
 
