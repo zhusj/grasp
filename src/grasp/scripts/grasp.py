@@ -45,9 +45,9 @@ def grasp_main():
   # pose.orientation.w = 0.9962 #temp_pose[3]
   # grasp[object_name][index] = pose
 
-  angle_resolution = 10 #degree
-  k = math.pi / 180.0 # degree to radian
-  alpha_range = 0
+  angle_resolution = 5 #degree
+  d_to_r = math.pi / 180.0 # degree to radian
+  alpha_range = 30
   beta_range = 0
   gamma_range = 0
   for i in range(0, beta_range/angle_resolution + 1):
@@ -55,7 +55,7 @@ def grasp_main():
     pose.position.x = 0
     pose.position.y = 0
     pose.position.z = 0
-    beta = k * (- beta_range/2 + i * angle_resolution)
+    beta = d_to_r * (- beta_range/2 + i * angle_resolution)
     temp_pose = tf.transformations.quaternion_from_euler(0, beta, 0)
 
     pose.orientation.x = temp_pose[0]
@@ -67,7 +67,9 @@ def grasp_main():
 
 
   for j in range(1, alpha_range/angle_resolution + 1):
-    alpha = k * (- alpha_range/2 + j * angle_resolution)
+    pose = Pose()
+    alpha = d_to_r * (- alpha_range/2 + j * angle_resolution)
+    print 'alpha = ', alpha
     temp_pose = tf.transformations.quaternion_from_euler(alpha, 0, 0)
 
     pose.orientation.x = temp_pose[0]
@@ -75,13 +77,12 @@ def grasp_main():
     pose.orientation.z = temp_pose[2]
     pose.orientation.w = temp_pose[3]
     grasp[object_name][index] = pose
+    print_angles(pose)
     index += 1
 
 
-
-
   for k in range(1, gamma_range/angle_resolution + 1):
-    gamma = k * (- gamma_range/2 + k * angle_resolution) 
+    gamma = d_to_r * (- gamma_range/2 + k * angle_resolution) 
     temp_pose = tf.transformations.quaternion_from_euler(0, 0, gamma)
 
     pose.orientation.x = temp_pose[0]
@@ -89,6 +90,7 @@ def grasp_main():
     pose.orientation.z = temp_pose[2]
     pose.orientation.w = temp_pose[3]
     grasp[object_name][index] = pose
+    print_angles(pose)
     index += 1
         # print index
         # print grasp
@@ -114,9 +116,14 @@ def grasp_main():
   loaded_file = numpy.load(save_path + '.npz' )
   # print index
   # print len(loaded_file[object_name])
+
   loaded_grasp =  loaded_file['grasp'][0]
-  print loaded_grasp[object_name][0]
-  print_angles(loaded_grasp[object_name][0])
+  num_of_grasp = len(loaded_grasp[object_name])
+  print loaded_grasp
+  for i in range(0,num_of_grasp):
+    print i
+    print loaded_grasp[object_name][i]
+    print_angles(loaded_grasp[object_name][i])
 
   # Main loop
   # rate = rospy.Rate(5) # hz
