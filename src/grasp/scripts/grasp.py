@@ -47,13 +47,23 @@ def grasp_main():
   # pose.orientation.w = 0.9962 #temp_pose[3]
   # grasp[object_name][index] = pose
 
-  angle_resolution = 10 #degree
+  angle_resolution = 5 #degree
     
 
   alpha_range = 0
-  beta_range = 30
-  gamma_range = 0
+  beta_range = 0
+  gamma_range = 20
   origin, xaxis, yaxis, zaxis = [0, 0, 0], [1, 0, 0], [0, 1, 0], [0, 0, 1]
+  o_pose = Pose()
+  o_pose.position.x = 0
+  o_pose.position.y = 0
+  o_pose.position.z = 0
+  o_pose.orientation.x = 0
+  o_pose.orientation.y = 0
+  o_pose.orientation.z = 0
+  o_pose.orientation.w = 1
+  print_angles(o_pose)
+
   for i in range(1, beta_range/angle_resolution + 1):
     # print 'beta'
     pose = Pose()
@@ -69,6 +79,14 @@ def grasp_main():
     pose.orientation.w = temp_pose[3]
     grasp[object_name][index] = pose
     print_angles(pose)
+    print_rpy(pose)
+
+
+    o_pose.orientation = rotate_orientation(o_pose.orientation, pose.orientation)
+
+    print_angles(o_pose)
+    print_rpy(o_pose)
+
     index += 1
 
 
@@ -85,6 +103,11 @@ def grasp_main():
     pose.orientation.w = temp_pose[3]
     grasp[object_name][index] = pose
     print_angles(pose)
+    print_rpy(pose)
+    o_pose.orientation = rotate_orientation(o_pose.orientation, pose.orientation)
+
+    print_angles(o_pose)
+    print_rpy(o_pose)
     index += 1
 
 
@@ -99,7 +122,15 @@ def grasp_main():
     pose.orientation.z = temp_pose[2]
     pose.orientation.w = temp_pose[3]
     grasp[object_name][index] = pose
+
+    angles = tf.transformations.euler_from_quaternion(quaternion_from_orientation(pose.orientation))
+    print [x/d_to_r for x in angles]
     print_angles(pose)
+    print_rpy(pose)
+    o_pose.orientation = rotate_orientation(o_pose.orientation, pose.orientation)
+
+    print_angles(o_pose)
+    print_rpy(o_pose)
     index += 1
         # print index
         # print grasp
@@ -144,13 +175,42 @@ def grasp_main():
 def quaternion_from_orientation(orientation):
   return [orientation.x, orientation.y, orientation.z, orientation.w]
 
-def print_angles(pose):
+def print_rpy(pose):
   Rq = tf.transformations.quaternion_matrix(quaternion_from_orientation(pose.orientation))
   angles, direc, Point = tf.transformations.rotation_from_matrix(Rq)
-  print angles/d_to_r
+  print angles/d_to_r, direc
   # print angles[0] * 180.0 / math.pi, ", ", angles[1] * 180.0 / math.pi, ", ", angles[2] * 180.0 / math.pi
     
   return
+
+def print_angles(pose):
+  angles = tf.transformations.euler_from_quaternion(quaternion_from_orientation(pose.orientation))
+  print angles[0] * 180.0 / math.pi, ", ", angles[1] * 180.0 / math.pi, ", ", angles[2] * 180.0 / math.pi
+  
+  return
+
+def rotate_orientation(orientation, rotation):
+  _orientation = numpy.empty((4, ), dtype=numpy.float64)
+  _orientation[0] = orientation.x
+  _orientation[1] = orientation.y
+  _orientation[2] = orientation.z
+  _orientation[3] = orientation.w
+
+  _rotation = numpy.empty((4, ), dtype=numpy.float64)
+  _rotation[0] = rotation.x
+  _rotation[1] = rotation.y
+  _rotation[2] = rotation.z
+  _rotation[3] = rotation.w
+
+  new_orientation = tf.transformations.quaternion_multiply(_orientation, _rotation)
+
+  orientation_rotated = Quaternion()
+  orientation_rotated.x = new_orientation[0]
+  orientation_rotated.y = new_orientation[1]
+  orientation_rotated.z = new_orientation[2]
+  orientation_rotated.w = new_orientation[3]
+
+  return orientation_rotated
 
 
 # This is the standard boilerplate that calls the main() function.
