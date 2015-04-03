@@ -50,9 +50,9 @@ def grasp_main():
   angle_resolution = 5 #degree
     
 
-  alpha_range = 360
-  beta_range = 360
-  gamma_range = 360
+  alpha_range = 90
+  beta_range = 0
+  gamma_range = 0
   origin, xaxis, yaxis, zaxis = [0, 0, 0], [1, 0, 0], [0, 1, 0], [0, 0, 1]
   o_pose = Pose()
   o_pose.position.x = 0
