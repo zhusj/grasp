@@ -27,7 +27,9 @@ from geometry_msgs.msg import (
 # filename = os.path.join(dir, '/relative/path/to/file/you/want')
 
 def grasp_main():
+  global d_to_r
 
+  d_to_r = math.pi / 180.0 # degree to radian
   object_name = 'expo_dry_erase_board_eraser'
   # print object_name
   # grasp = {}
@@ -48,10 +50,12 @@ def grasp_main():
   # grasp[object_name][index] = pose
 
   angle_resolution = 5 #degree
-  d_to_r = math.pi / 180.0 # degree to radian
-  alpha_range = 30
+    
+
+  alpha_range = 90
   beta_range = 0
   gamma_range = 0
+
   # for i in range(0, beta_range/angle_resolution + 1):
   #   # pose = []
   #   pose[1] = 0
@@ -82,13 +86,13 @@ def grasp_main():
       tmp =  float(temp_pose[i])
       pose.append(tmp)
 
+
     # pose.append(temp_pose[1])
     # pose.append(temp_pose[2])
     # pose.append(temp_pose[3])
     grasp.append(pose)
     # grasp = (grasp, pose)
 
-    # print_angles(pose)
     index += 1
 
   print grasp
@@ -118,13 +122,14 @@ def grasp_main():
 #     loaded_grasp = json.load(f)
 
   # print index
-  save_path = 'Github/grasp//data/' + object_name
+  save_path = './data/' + object_name
   # print save_path
   
   numpy.savez(save_path, grasp = [grasp])
   # grasp_publisher = rospy.Publisher('/grasp', , queue_size =10)
   # data_path = root_path + '/data/' + object_name + '.npy'
   # print data_path
+
   a = [1, 2, 3, 4, 5, 6, 7]
   a = [a, [1, 2, 3, 4, 5, 6, 7]]
   # a = a.append([1, 2, 3, 4, 5, 6, 7])
@@ -138,6 +143,7 @@ def grasp_main():
 
   # loaded_grasp =  loaded_file['grasp'][0]
   # num_of_grasp = len(loaded_grasp)
+
   # print loaded_grasp
   # for i in range(0,num_of_grasp):
   #   print i
@@ -154,11 +160,42 @@ def grasp_main():
 def quaternion_from_orientation(orientation):
   return [orientation.x, orientation.y, orientation.z, orientation.w]
 
+def print_rpy(pose):
+  Rq = tf.transformations.quaternion_matrix(quaternion_from_orientation(pose.orientation))
+  angles, direc, Point = tf.transformations.rotation_from_matrix(Rq)
+  print angles/d_to_r, direc
+  # print angles[0] * 180.0 / math.pi, ", ", angles[1] * 180.0 / math.pi, ", ", angles[2] * 180.0 / math.pi
+    
+  return
+
 def print_angles(pose):
   angles = tf.transformations.euler_from_quaternion(quaternion_from_orientation(pose.orientation))
   print angles[0] * 180.0 / math.pi, ", ", angles[1] * 180.0 / math.pi, ", ", angles[2] * 180.0 / math.pi
-    
+  
   return
+
+def rotate_orientation(orientation, rotation):
+  _orientation = numpy.empty((4, ), dtype=numpy.float64)
+  _orientation[0] = orientation.x
+  _orientation[1] = orientation.y
+  _orientation[2] = orientation.z
+  _orientation[3] = orientation.w
+
+  _rotation = numpy.empty((4, ), dtype=numpy.float64)
+  _rotation[0] = rotation.x
+  _rotation[1] = rotation.y
+  _rotation[2] = rotation.z
+  _rotation[3] = rotation.w
+
+  new_orientation = tf.transformations.quaternion_multiply(_orientation, _rotation)
+
+  orientation_rotated = Quaternion()
+  orientation_rotated.x = new_orientation[0]
+  orientation_rotated.y = new_orientation[1]
+  orientation_rotated.z = new_orientation[2]
+  orientation_rotated.w = new_orientation[3]
+
+  return orientation_rotated
 
 
 # This is the standard boilerplate that calls the main() function.
